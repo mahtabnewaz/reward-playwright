@@ -1,0 +1,13 @@
+{
+  "name": "reward-playwright",
+  "version": "1.0.0",
+  "scripts": {
+    "start:app": "npx serve target_app -p 3000",
+    "test": "npx playwright test",
+    "test:report": "npx playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "serve": "^14.0.0"
+  }
+}

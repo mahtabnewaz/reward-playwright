@@ -1,0 +1,32 @@
+
+============================================================
+STATISTICAL SIGNIFICANCE TESTS (McNemar's test)
+============================================================
+n = 49 paired observations
+Significance: *** p<0.001, ** p<0.01, * p<0.05
+
+Baseline (A) → RAG (B)
+  Pass rate: 57.1% → 85.7% (Δ = +28.6%)
+  Tests gained (failed→passed): 16
+  Tests lost (passed→failed):   2
+  McNemar χ² = 9.389, p = 0.0022 **
+
+RAG (B) → Multi-Agent (C)
+  Pass rate: 85.7% → 93.9% (Δ = +8.2%)
+  Tests gained (failed→passed): 4
+  Tests lost (passed→failed):   0
+  McNemar χ² = 2.250, p = 0.1336 n.s.
+
+Multi-Agent (C) → Full System (D)
+  Pass rate: 93.9% → 100.0% (Δ = +6.1%)
+  Tests gained (failed→passed): 3
+  Tests lost (passed→failed):   0
+  McNemar χ² = 1.333, p = 0.2482 n.s.
+
+Baseline (A) → Full System (D)
+  Pass rate: 57.1% → 100.0% (Δ = +42.9%)
+  Tests gained (failed→passed): 21
+  Tests lost (passed→failed):   0
+  McNemar χ² = 19.048, p = 0.0000 ***
+
+============================================================

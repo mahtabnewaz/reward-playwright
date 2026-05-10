@@ -1,0 +1,22 @@
+# Secrets and credentials
+api_key.txt
+.env
+config/
+
+# Drafts and setup scripts
+drafts/
+
+# Python virtual environment
+venv/
+
+# Generated files
+node_modules/
+__pycache__/
+*.pyc
+test-results/
+playwright-report/
+tests/generated/
+data/chroma_db/
+
+# OS
+.DS_Store

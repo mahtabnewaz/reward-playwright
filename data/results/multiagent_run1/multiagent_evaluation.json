@@ -1,0 +1,1445 @@
+[
+  {
+    "requirement_id": "LOGIN-01",
+    "category": "login",
+    "complexity": "easy",
+    "description": "Verify that the login page title 'Login' is visible when the page loads",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 4,
+    "generation_latency": 9.98,
+    "execution_duration": 0.27,
+    "retrieved_examples": [
+      "ex-01",
+      "ex-04",
+      "ex-02",
+      "ex-09",
+      "ex-18"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-the-login-page-title--login--is-visibl.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('login page title is visible on page load', async ({ page }) => {\n  await page.goto('/');\n  await expect(page.getByTestId('login-title')).toBeVisible();\n  await expect(page.getByTestId('login-title')).toHaveText('Login');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('login page title is visible on page load', async ({ page }) => {\n  await page.goto('/');\n  await expect(page.getByTestId('login-title')).toBeVisible();\n  await expect(page.getByTestId('login-title')).toHaveText('Login');\n});"
+  },
+  {
+    "requirement_id": "LOGIN-02",
+    "category": "login",
+    "complexity": "easy",
+    "description": "Verify that the username input field is present and has placeholder text 'Enter username'",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 4,
+    "generation_latency": 1.16,
+    "execution_duration": 0.35,
+    "retrieved_examples": [
+      "ex-03",
+      "ex-04",
+      "ex-12",
+      "ex-05",
+      "ex-07"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-the-username-input-field-is-present-an.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('username input field is present and has placeholder text', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await expect(page.getByTestId('username-input')).toBeVisible();\n  await expect(page.getByTestId('username-input')).toHaveAttribute('placeholder', 'Enter username');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('username input field is present and has placeholder text', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await expect(page.getByTestId('username-input')).toBeVisible();\n  await expect(page.getByTestId('username-input')).toHaveAttribute('placeholder', 'Enter username');\n});"
+  },
+  {
+    "requirement_id": "LOGIN-03",
+    "category": "login",
+    "complexity": "easy",
+    "description": "Verify that the password input field is present and is of type password",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 4,
+    "generation_latency": 1.85,
+    "execution_duration": 0.34,
+    "retrieved_examples": [
+      "ex-04",
+      "ex-03",
+      "ex-05",
+      "ex-15",
+      "ex-06"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-the-password-input-field-is-present-an.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('password input field is present and of correct type', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await expect(page.getByTestId('password-input')).toBeVisible();\n  await expect(page.getByTestId('password-input')).toHaveAttribute('type', 'password');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('password input field is present and of correct type', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await expect(page.getByTestId('password-input')).toBeVisible();\n  await expect(page.getByTestId('password-input')).toHaveAttribute('type', 'password');\n});"
+  },
+  {
+    "requirement_id": "LOGIN-04",
+    "category": "login",
+    "complexity": "easy",
+    "description": "Verify that the login button is visible and contains the text 'Login'",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 4,
+    "generation_latency": 0.89,
+    "execution_duration": 0.34,
+    "retrieved_examples": [
+      "ex-04",
+      "ex-01",
+      "ex-02",
+      "ex-05",
+      "ex-11"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-the-login-button-is-visible-and-contai.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('login button is visible and contains correct text', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await expect(page.getByTestId('login-button')).toBeVisible();\n  await expect(page.getByTestId('login-button')).toHaveText('Login');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('login button is visible and contains correct text', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await expect(page.getByTestId('login-button')).toBeVisible();\n  await expect(page.getByTestId('login-button')).toHaveText('Login');\n});"
+  },
+  {
+    "requirement_id": "LOGIN-05",
+    "category": "login",
+    "complexity": "medium",
+    "description": "Verify that entering valid credentials (username: admin, password: password123) and clicking login shows a success message",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 2,
+    "generation_latency": 0.88,
+    "execution_duration": 0.4,
+    "retrieved_examples": [
+      "ex-06",
+      "ex-05",
+      "ex-04",
+      "ex-07",
+      "ex-15"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-entering-valid-credentials--username.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('successful login shows success message', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await page.getByTestId('username-input').fill('admin');\n  await page.getByTestId('password-input').fill('password123');\n  await page.getByTestId('login-button').click();\n  await expect(page.getByTestId('login-success')).toBeVisible();\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('successful login shows success message', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await page.getByTestId('username-input').fill('admin');\n  await page.getByTestId('password-input').fill('password123');\n  await page.getByTestId('login-button').click();\n  await expect(page.getByTestId('login-success')).toBeVisible();\n});"
+  },
+  {
+    "requirement_id": "LOGIN-06",
+    "category": "login",
+    "complexity": "medium",
+    "description": "Verify that entering invalid credentials shows an error message 'Invalid username or password'",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 4,
+    "generation_latency": 0.68,
+    "execution_duration": 0.44,
+    "retrieved_examples": [
+      "ex-06",
+      "ex-05",
+      "ex-04",
+      "ex-07",
+      "ex-11"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-entering-invalid-credentials-shows-an.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('invalid login shows error message', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await page.getByTestId('username-input').fill('wrong');\n  await page.getByTestId('password-input').fill('wrong');\n  await page.getByTestId('login-button').click();\n  await expect(page.getByTestId('login-error')).toBeVisible();\n  await expect(page.getByTestId('login-error')).toHaveText('Invalid username or password');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('invalid login shows error message', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await page.getByTestId('username-input').fill('wrong');\n  await page.getByTestId('password-input').fill('wrong');\n  await page.getByTestId('login-button').click();\n  await expect(page.getByTestId('login-error')).toBeVisible();\n  await expect(page.getByTestId('login-error')).toHaveText('Invalid username or password');\n});"
+  },
+  {
+    "requirement_id": "LOGIN-07",
+    "category": "login",
+    "complexity": "medium",
+    "description": "Verify that submitting the login form with empty username and password shows error 'Please fill in all fields'",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 2,
+    "generation_latency": 0.79,
+    "execution_duration": 0.43,
+    "retrieved_examples": [
+      "ex-07",
+      "ex-06",
+      "ex-05",
+      "ex-04",
+      "ex-12"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-submitting-the-login-form-with-empty-u.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('empty login form submission shows validation error', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await page.getByTestId('login-button').click();\n  await expect(page.getByTestId('login-error')).toHaveText('Please fill in all fields');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('empty login form submission shows validation error', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await page.getByTestId('login-button').click();\n  await expect(page.getByTestId('login-error')).toHaveText('Please fill in all fields');\n});"
+  },
+  {
+    "requirement_id": "LOGIN-08",
+    "category": "login",
+    "complexity": "medium",
+    "description": "Verify that entering only username without password and clicking login shows the fill-all-fields error",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 4,
+    "generation_latency": 1.53,
+    "execution_duration": 0.45,
+    "retrieved_examples": [
+      "ex-04",
+      "ex-06",
+      "ex-05",
+      "ex-07",
+      "ex-12"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-entering-only-username-without-passwor.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('login with only username shows fill all fields error', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await page.getByTestId('username-input').fill('admin');\n  await page.getByTestId('login-button').click();\n  await expect(page.getByTestId('login-error')).toBeVisible();\n  await expect(page.getByTestId('login-error')).toHaveText('Please fill in all fields');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('login with only username shows fill all fields error', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await page.getByTestId('username-input').fill('admin');\n  await page.getByTestId('login-button').click();\n  await expect(page.getByTestId('login-error')).toBeVisible();\n  await expect(page.getByTestId('login-error')).toHaveText('Please fill in all fields');\n});"
+  },
+  {
+    "requirement_id": "LOGIN-09",
+    "category": "login",
+    "complexity": "medium",
+    "description": "Verify that the success message is hidden by default and only appears after successful login",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 4,
+    "generation_latency": 1.54,
+    "execution_duration": 0.46,
+    "retrieved_examples": [
+      "ex-04",
+      "ex-07",
+      "ex-06",
+      "ex-05",
+      "ex-01"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-the-success-message-is-hidden-by-defau.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('success message is hidden by default and appears after successful login', async ({ page }) => {\n  await page.goto('/');\n  await expect(page.getByTestId('login-success')).not.toBeVisible();\n  await page.getByTestId('username-input').fill('admin');\n  await page.getByTestId('password-input').fill('password123');\n  await page.getByTestId('login-button').click();\n  await expect(page.getByTestId('login-success')).toBeVisible();\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('success message is hidden by default and appears after successful login', async ({ page }) => {\n  await page.goto('/');\n  await expect(page.getByTestId('login-success')).not.toBeVisible();\n  await page.getByTestId('username-input').fill('admin');\n  await page.getByTestId('password-input').fill('password123');\n  await page.getByTestId('login-button').click();\n  await expect(page.getByTestId('login-success')).toBeVisible();\n});"
+  },
+  {
+    "requirement_id": "LOGIN-10",
+    "category": "login",
+    "complexity": "hard",
+    "description": "Verify that after a failed login attempt, entering correct credentials and submitting again shows success and hides the error",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 6,
+    "generation_latency": 1.43,
+    "execution_duration": 0.53,
+    "retrieved_examples": [
+      "ex-06",
+      "ex-05",
+      "ex-04",
+      "ex-07",
+      "ex-12"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-after-a-failed-login-attempt--entering.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('successful login after failed attempt shows success and hides error', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await page.getByTestId('username-input').fill('wrong');\n  await page.getByTestId('password-input').fill('wrong');\n  await page.getByTestId('login-button').click();\n  await expect(page.getByTestId('login-error')).toBeVisible();\n  await page.getByTestId('username-input').fill('admin');\n  await page.getByTestId('password-input').fill('password123');\n  await page.getByTestId('login-button').click();\n  await expect(page.getByTestId('login-success')).toBeVisible();\n  await expect(page.getByTestId('login-error')).not.toBeVisible();\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('successful login after failed attempt shows success and hides error', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await page.getByTestId('username-input').fill('wrong');\n  await page.getByTestId('password-input').fill('wrong');\n  await page.getByTestId('login-button').click();\n  await expect(page.getByTestId('login-error')).toBeVisible();\n  await page.getByTestId('username-input').fill('admin');\n  await page.getByTestId('password-input').fill('password123');\n  await page.getByTestId('login-button').click();\n  await expect(page.getByTestId('login-success')).toBeVisible();\n  await expect(page.getByTestId('login-error')).not.toBeVisible();\n});"
+  },
+  {
+    "requirement_id": "LOGIN-11",
+    "category": "login",
+    "complexity": "hard",
+    "description": "Verify that the error message disappears when the user tries to login again after a failed attempt",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 4,
+    "generation_latency": 0.91,
+    "execution_duration": 0.49,
+    "retrieved_examples": [
+      "ex-04",
+      "ex-06",
+      "ex-07",
+      "ex-05",
+      "ex-02"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-the-error-message-disappears-when-the.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('error message disappears after another login attempt', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('username-input').fill('wrong');\n  await page.getByTestId('password-input').fill('wrong');\n  await page.getByTestId('login-button').click();\n  await expect(page.getByTestId('login-error')).toBeVisible();\n  await page.getByTestId('username-input').fill('admin');\n  await page.getByTestId('password-input').fill('password123');\n  await page.getByTestId('login-button').click();\n  await expect(page.getByTestId('login-error')).not.toBeVisible();\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('error message disappears after another login attempt', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('username-input').fill('wrong');\n  await page.getByTestId('password-input').fill('wrong');\n  await page.getByTestId('login-button').click();\n  await expect(page.getByTestId('login-error')).toBeVisible();\n  await page.getByTestId('username-input').fill('admin');\n  await page.getByTestId('password-input').fill('password123');\n  await page.getByTestId('login-button').click();\n  await expect(page.getByTestId('login-error')).not.toBeVisible();\n});"
+  },
+  {
+    "requirement_id": "LOGIN-12",
+    "category": "login",
+    "complexity": "medium",
+    "description": "Verify that the password field masks the input characters",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 1,
+    "generation_latency": 1.02,
+    "execution_duration": 0.36,
+    "retrieved_examples": [
+      "ex-04",
+      "ex-05",
+      "ex-03",
+      "ex-06",
+      "ex-12"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-the-password-field-masks-the-input-cha.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('password input masks characters', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await page.getByTestId('password-input').fill('password123');\n  const passwordInput = await page.getByTestId('password-input');\n  const inputType = await passwordInput.getAttribute('type');\n  expect(inputType).toBe('password');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('password input masks characters', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await page.getByTestId('password-input').fill('password123');\n  const passwordInput = await page.getByTestId('password-input');\n  const inputType = await passwordInput.getAttribute('type');\n  expect(inputType).toBe('password');\n});"
+  },
+  {
+    "requirement_id": "NAV-01",
+    "category": "navigation",
+    "complexity": "easy",
+    "description": "Verify that the navigation bar contains three links: Login, Todo, and Search",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 13,
+    "generation_latency": 2.06,
+    "execution_duration": 0.35,
+    "retrieved_examples": [
+      "ex-08",
+      "ex-09",
+      "ex-10",
+      "ex-17",
+      "ex-04"
+    ],
+    "review": {
+      "valid": false,
+      "issues": [
+        "HALLUCINATED METHODS: page.getByTestId() returns a locator, not an element. Use locator.count() or locator.all() to get the number of elements.",
+        "WRONG ASSERTIONS: The test is checking if each link is visible, but it's not checking if the links have the correct text (Login, Todo, Search).",
+        "ASYNC ISSUES: The last expect() call is not awaited."
+      ],
+      "suggestions": [
+        "Use page.getByTestId('nav-login').count() to get the number of elements with the data-testid 'nav-login'.",
+        "Use page.getByTestId('nav-login').textContent() to get the text content of the link and assert it's equal to 'Login'.",
+        "Add await to the last expect() call: await expect(links.length).toBe(3);"
+      ]
+    },
+    "revised": true,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-the-navigation-bar-contains-three-link.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('navigation bar contains three links', async ({ page }) => {\n  await page.goto('/');\n  await expect(page.getByTestId('nav-login')).toBeVisible();\n  await expect(page.getByTestId('nav-todo')).toBeVisible();\n  await expect(page.getByTestId('nav-search')).toBeVisible();\n  await expect(page.getByTestId('nav-login')).toContainText('Login');\n  await expect(page.getByTestId('nav-todo')).toContainText('Todo');\n  await expect(page.getByTestId('nav-search')).toContainText('Search');\n  const links = await page.getByTestId('nav-login').count() + await page.getByTestId('nav-todo').count() + await page.getByTestId('nav-search').count();\n  await expect(links).toBe(3);\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('navigation bar contains three links', async ({ page }) => {\n  await page.goto('/');\n  const navLinks = page.getByTestId('nav-login'), \n            todoLink = page.getByTestId('nav-todo'), \n            searchLink = page.getByTestId('nav-search');\n  await expect(navLinks).toBeVisible();\n  await expect(todoLink).toBeVisible();\n  await expect(searchLink).toBeVisible();\n  const links = [navLinks, todoLink, searchLink];\n  expect(links.length).toBe(3);\n});"
+  },
+  {
+    "requirement_id": "NAV-02",
+    "category": "navigation",
+    "complexity": "medium",
+    "description": "Verify that clicking the Todo navigation link shows the Todo page and hides the Login page",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 6,
+    "generation_latency": 1.53,
+    "execution_duration": 0.39,
+    "retrieved_examples": [
+      "ex-08",
+      "ex-09",
+      "ex-18",
+      "ex-01",
+      "ex-10"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-clicking-the-todo-navigation-link-show.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('clicking Todo nav link shows Todo page and hides Login page', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await expect(page.getByTestId('login-title')).toBeVisible();\n  await page.getByTestId('nav-todo').click();\n  await expect(page.getByTestId('todo-title')).toBeVisible();\n  await expect(page.getByTestId('login-title')).toBeHidden();\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('clicking Todo nav link shows Todo page and hides Login page', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await expect(page.getByTestId('login-title')).toBeVisible();\n  await page.getByTestId('nav-todo').click();\n  await expect(page.getByTestId('todo-title')).toBeVisible();\n  await expect(page.getByTestId('login-title')).toBeHidden();\n});"
+  },
+  {
+    "requirement_id": "NAV-03",
+    "category": "navigation",
+    "complexity": "medium",
+    "description": "Verify that clicking the Search navigation link shows the Search page and hides other pages",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 6,
+    "generation_latency": 0.93,
+    "execution_duration": 0.34,
+    "retrieved_examples": [
+      "ex-08",
+      "ex-10",
+      "ex-09",
+      "ex-01",
+      "ex-17"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-clicking-the-search-navigation-link-sh.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('clicking Search nav link shows Search page and hides other pages', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await expect(page.getByTestId('search-title')).toBeVisible();\n  await expect(page.getByTestId('login-title')).not.toBeVisible();\n  await expect(page.getByTestId('todo-title')).not.toBeVisible();\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('clicking Search nav link shows Search page and hides other pages', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await expect(page.getByTestId('search-title')).toBeVisible();\n  await expect(page.getByTestId('login-title')).not.toBeVisible();\n  await expect(page.getByTestId('todo-title')).not.toBeVisible();\n});"
+  },
+  {
+    "requirement_id": "NAV-04",
+    "category": "navigation",
+    "complexity": "medium",
+    "description": "Verify that the active navigation link has the active CSS class",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 1,
+    "generation_latency": 1.15,
+    "execution_duration": 0.32,
+    "retrieved_examples": [
+      "ex-09",
+      "ex-08",
+      "ex-01",
+      "ex-02",
+      "ex-18"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-the-active-navigation-link-has-the-act.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('active navigation link has active CSS class', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await expect(page.getByTestId('nav-login')).toHaveClass(/active/);\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('active navigation link has active CSS class', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await expect(page.getByTestId('nav-login')).toHaveClass(/active/);\n});"
+  },
+  {
+    "requirement_id": "NAV-05",
+    "category": "navigation",
+    "complexity": "hard",
+    "description": "Verify that navigating from Login to Todo to Search and back to Login shows the correct page each time",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 8,
+    "generation_latency": 1.07,
+    "execution_duration": 0.46,
+    "retrieved_examples": [
+      "ex-08",
+      "ex-04",
+      "ex-10",
+      "ex-06",
+      "ex-17"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-navigating-from-login-to-todo-to-searc.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('navigating between login, todo, and search shows correct pages', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await expect(page.getByTestId('login-title')).toBeVisible();\n\n  await page.getByTestId('nav-todo').click();\n  await expect(page.getByTestId('todo-title')).toBeVisible();\n\n  await page.getByTestId('nav-search').click();\n  await expect(page.getByTestId('search-title')).toBeVisible();\n\n  await page.getByTestId('nav-login').click();\n  await expect(page.getByTestId('login-title')).toBeVisible();\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('navigating between login, todo, and search shows correct pages', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await expect(page.getByTestId('login-title')).toBeVisible();\n\n  await page.getByTestId('nav-todo').click();\n  await expect(page.getByTestId('todo-title')).toBeVisible();\n\n  await page.getByTestId('nav-search').click();\n  await expect(page.getByTestId('search-title')).toBeVisible();\n\n  await page.getByTestId('nav-login').click();\n  await expect(page.getByTestId('login-title')).toBeVisible();\n});"
+  },
+  {
+    "requirement_id": "NAV-06",
+    "category": "navigation",
+    "complexity": "easy",
+    "description": "Verify that the Login page is shown by default when the app loads",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 2,
+    "generation_latency": 1.28,
+    "execution_duration": 0.28,
+    "retrieved_examples": [
+      "ex-01",
+      "ex-04",
+      "ex-05",
+      "ex-18",
+      "ex-06"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-the-login-page-is-shown-by-default-whe.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('login page is shown by default', async ({ page }) => {\n  await page.goto('/');\n  await expect(page.getByTestId('login-title')).toBeVisible();\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('login page is shown by default', async ({ page }) => {\n  await page.goto('/');\n  await expect(page.getByTestId('login-title')).toBeVisible();\n});"
+  },
+  {
+    "requirement_id": "TODO-01",
+    "category": "todo",
+    "complexity": "easy",
+    "description": "Verify that the Todo page has a title 'Todo List'",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 2,
+    "generation_latency": 1.28,
+    "execution_duration": 0.37,
+    "retrieved_examples": [
+      "ex-11",
+      "ex-02",
+      "ex-20",
+      "ex-01",
+      "ex-17"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-the-todo-page-has-a-title--todo-list.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('todo page has title', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await expect(page.getByTestId('todo-title')).toHaveText('Todo List');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('todo page has title', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await expect(page.getByTestId('todo-title')).toHaveText('Todo List');\n});"
+  },
+  {
+    "requirement_id": "TODO-02",
+    "category": "todo",
+    "complexity": "easy",
+    "description": "Verify that the todo input field has placeholder text 'Add a new task...'",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 2,
+    "generation_latency": 1.32,
+    "execution_duration": 0.35,
+    "retrieved_examples": [
+      "ex-03",
+      "ex-11",
+      "ex-12",
+      "ex-07",
+      "ex-02"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-the-todo-input-field-has-placeholder-t.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('todo input has placeholder text', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await expect(page.getByTestId('todo-input')).toHaveAttribute('placeholder', 'Add a new task...');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('todo input has placeholder text', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await expect(page.getByTestId('todo-input')).toHaveAttribute('placeholder', 'Add a new task...');\n});"
+  },
+  {
+    "requirement_id": "TODO-03",
+    "category": "todo",
+    "complexity": "medium",
+    "description": "Verify that typing a task name and clicking Add Task adds the task to the todo list",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 2,
+    "generation_latency": 1.15,
+    "execution_duration": 0.45,
+    "retrieved_examples": [
+      "ex-11",
+      "ex-15",
+      "ex-04",
+      "ex-02",
+      "ex-13"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-typing-a-task-name-and-clicking-add-ta.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('adding task adds it to todo list', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('todo-input').fill('New task');\n  await page.getByTestId('add-todo-button').click();\n  await expect(page.getByTestId('todo-list')).toContainText('New task');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('adding task adds it to todo list', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('todo-input').fill('New task');\n  await page.getByTestId('add-todo-button').click();\n  await expect(page.getByTestId('todo-list')).toContainText('New task');\n});"
+  },
+  {
+    "requirement_id": "TODO-04",
+    "category": "todo",
+    "complexity": "medium",
+    "description": "Verify that after adding a task the input field is cleared",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 2,
+    "generation_latency": 0.94,
+    "execution_duration": 0.44,
+    "retrieved_examples": [
+      "ex-12",
+      "ex-03",
+      "ex-07",
+      "ex-11",
+      "ex-04"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-after-adding-a-task-the-input-field-is.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('input field clears after adding task', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('todo-input').fill('New task');\n  await page.getByTestId('add-todo-button').click();\n  await expect(page.getByTestId('todo-input')).toHaveValue('');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('input field clears after adding task', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('todo-input').fill('New task');\n  await page.getByTestId('add-todo-button').click();\n  await expect(page.getByTestId('todo-input')).toHaveValue('');\n});"
+  },
+  {
+    "requirement_id": "TODO-05",
+    "category": "todo",
+    "complexity": "medium",
+    "description": "Verify that the task count badge updates correctly when a task is added",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 1,
+    "generation_latency": 1.11,
+    "execution_duration": 0.46,
+    "retrieved_examples": [
+      "ex-13",
+      "ex-17",
+      "ex-11",
+      "ex-14",
+      "ex-19"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-the-task-count-badge-updates-correctly.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('task count badge updates when task is added', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  const initialCount = await page.getByTestId('todo-count').textContent();\n  await page.getByTestId('todo-input').fill('New task');\n  await page.getByTestId('add-todo-button').click();\n  const updatedCount = await page.getByTestId('todo-count').textContent();\n  expect(updatedCount).not.toEqual(initialCount);\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('task count badge updates when task is added', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  const initialCount = await page.getByTestId('todo-count').textContent();\n  await page.getByTestId('todo-input').fill('New task');\n  await page.getByTestId('add-todo-button').click();\n  const updatedCount = await page.getByTestId('todo-count').textContent();\n  expect(updatedCount).not.toEqual(initialCount);\n});"
+  },
+  {
+    "requirement_id": "TODO-06",
+    "category": "todo",
+    "complexity": "medium",
+    "description": "Verify that clicking the Delete button on a todo item removes it from the list",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 2,
+    "generation_latency": 1.31,
+    "execution_duration": 0.51,
+    "retrieved_examples": [
+      "ex-20",
+      "ex-11",
+      "ex-19",
+      "ex-01",
+      "ex-14"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-clicking-the-delete-button-on-a-todo-i.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('delete button removes item from list', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('todo-input').fill('Item to delete');\n  await page.getByTestId('add-todo-button').click();\n  await page.getByTestId('todo-delete-1').click();\n  await expect(page.getByTestId('todo-list')).not.toContainText('Item to delete');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('delete button removes item from list', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('todo-input').fill('Item to delete');\n  await page.getByTestId('add-todo-button').click();\n  await page.getByTestId('todo-delete-1').click();\n  await expect(page.getByTestId('todo-list')).not.toContainText('Item to delete');\n});"
+  },
+  {
+    "requirement_id": "TODO-07",
+    "category": "todo",
+    "complexity": "medium",
+    "description": "Verify that checking a todo checkbox applies strikethrough text decoration to the task text",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 1,
+    "generation_latency": 1.03,
+    "execution_duration": 0.43,
+    "retrieved_examples": [
+      "ex-02",
+      "ex-19",
+      "ex-11",
+      "ex-03",
+      "ex-09"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-checking-a-todo-checkbox-applies-strik.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('checking todo checkbox applies strikethrough to task text', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('todo-input').fill('Complete project');\n  await page.getByTestId('add-todo-button').click();\n  await page.getByTestId('todo-check-1').check();\n  await expect(page.getByTestId('todo-text-1')).toHaveCSS('text-decoration', /line-through/);\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('checking todo checkbox applies strikethrough to task text', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('todo-input').fill('Complete project');\n  await page.getByTestId('add-todo-button').click();\n  await page.getByTestId('todo-check-1').check();\n  await expect(page.getByTestId('todo-text-1')).toHaveCSS('text-decoration', /line-through/);\n});"
+  },
+  {
+    "requirement_id": "TODO-08",
+    "category": "todo",
+    "complexity": "hard",
+    "description": "Verify that adding three tasks shows count '3 tasks' then deleting one shows '2 tasks'",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 4,
+    "generation_latency": 1.06,
+    "execution_duration": 0.65,
+    "retrieved_examples": [
+      "ex-20",
+      "ex-13",
+      "ex-17",
+      "ex-11",
+      "ex-14"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-adding-three-tasks-shows-count--3-task.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('task count updates correctly after adding and deleting tasks', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('todo-input').fill('Task 1');\n  await page.getByTestId('add-todo-button').click();\n  await page.getByTestId('todo-input').fill('Task 2');\n  await page.getByTestId('add-todo-button').click();\n  await page.getByTestId('todo-input').fill('Task 3');\n  await page.getByTestId('add-todo-button').click();\n  await expect(page.getByTestId('todo-count')).toHaveText('3 tasks');\n  await page.getByTestId('todo-delete-1').click();\n  await expect(page.getByTestId('todo-count')).toHaveText('2 tasks');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('task count updates correctly after adding and deleting tasks', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('todo-input').fill('Task 1');\n  await page.getByTestId('add-todo-button').click();\n  await page.getByTestId('todo-input').fill('Task 2');\n  await page.getByTestId('add-todo-button').click();\n  await page.getByTestId('todo-input').fill('Task 3');\n  await page.getByTestId('add-todo-button').click();\n  await expect(page.getByTestId('todo-count')).toHaveText('3 tasks');\n  await page.getByTestId('todo-delete-1').click();\n  await expect(page.getByTestId('todo-count')).toHaveText('2 tasks');\n});"
+  },
+  {
+    "requirement_id": "TODO-09",
+    "category": "todo",
+    "complexity": "hard",
+    "description": "Verify that unchecking a previously checked todo removes the strikethrough decoration",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 1,
+    "generation_latency": 1.16,
+    "execution_duration": 0.53,
+    "retrieved_examples": [
+      "ex-19",
+      "ex-18",
+      "ex-01",
+      "ex-11",
+      "ex-09"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-unchecking-a-previously-checked-todo-r.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('unchecking todo removes strikethrough', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('todo-input').fill('Walk the dog');\n  await page.getByTestId('add-todo-button').click();\n  await page.getByTestId('todo-check-1').check();\n  await page.getByTestId('todo-check-1').uncheck();\n  await expect(page.getByTestId('todo-text-1')).not.toHaveCSS('text-decoration', /line-through/);\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('unchecking todo removes strikethrough', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('todo-input').fill('Walk the dog');\n  await page.getByTestId('add-todo-button').click();\n  await page.getByTestId('todo-check-1').check();\n  await page.getByTestId('todo-check-1').uncheck();\n  await expect(page.getByTestId('todo-text-1')).not.toHaveCSS('text-decoration', /line-through/);\n});"
+  },
+  {
+    "requirement_id": "TODO-10",
+    "category": "todo",
+    "complexity": "easy",
+    "description": "Verify that the Add Task button is present and has text 'Add Task'",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 2,
+    "generation_latency": 1.27,
+    "execution_duration": 0.3,
+    "retrieved_examples": [
+      "ex-11",
+      "ex-02",
+      "ex-04",
+      "ex-07",
+      "ex-03"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-the-add-task-button-is-present-and-has.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('Add Task button is present and has correct text', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await expect(page.getByTestId('add-todo-button')).toHaveText('Add Task');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('Add Task button is present and has correct text', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await expect(page.getByTestId('add-todo-button')).toHaveText('Add Task');\n});"
+  },
+  {
+    "requirement_id": "TODO-11",
+    "category": "todo",
+    "complexity": "medium",
+    "description": "Verify that clicking Add Task with an empty input does not add any item to the list",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 1,
+    "generation_latency": 1.06,
+    "execution_duration": 0.41,
+    "retrieved_examples": [
+      "ex-11",
+      "ex-07",
+      "ex-03",
+      "ex-20",
+      "ex-13"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-clicking-add-task-with-an-empty-input.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('adding task with empty input does not add item to list', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('add-todo-button').click();\n  await expect(page.getByTestId('todo-list')).toBeEmpty();\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('adding task with empty input does not add item to list', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('add-todo-button').click();\n  await expect(page.getByTestId('todo-list')).toBeEmpty();\n});"
+  },
+  {
+    "requirement_id": "TODO-12",
+    "category": "todo",
+    "complexity": "hard",
+    "description": "Verify that adding multiple tasks and deleting all of them results in an empty list and 0 tasks count",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 5,
+    "generation_latency": 1.8,
+    "execution_duration": 0.74,
+    "retrieved_examples": [
+      "ex-20",
+      "ex-17",
+      "ex-13",
+      "ex-11",
+      "ex-14"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-adding-multiple-tasks-and-deleting-all.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('deleting all tasks results in empty list and 0 tasks count', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('todo-input').fill('Task 1');\n  await page.getByTestId('add-todo-button').click();\n  await page.getByTestId('todo-input').fill('Task 2');\n  await page.getByTestId('add-todo-button').click();\n  await page.getByTestId('todo-input').fill('Task 3');\n  await page.getByTestId('add-todo-button').click();\n  await expect(page.getByTestId('todo-count')).toHaveText('3 tasks');\n  await page.getByTestId('todo-delete-1').click();\n  await page.getByTestId('todo-delete-2').click();\n  await page.getByTestId('todo-delete-3').click();\n  await expect(page.getByTestId('todo-list')).toBeEmpty();\n  await expect(page.getByTestId('todo-count')).toHaveText('0 tasks');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('deleting all tasks results in empty list and 0 tasks count', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('todo-input').fill('Task 1');\n  await page.getByTestId('add-todo-button').click();\n  await page.getByTestId('todo-input').fill('Task 2');\n  await page.getByTestId('add-todo-button').click();\n  await page.getByTestId('todo-input').fill('Task 3');\n  await page.getByTestId('add-todo-button').click();\n  await expect(page.getByTestId('todo-count')).toHaveText('3 tasks');\n  await page.getByTestId('todo-delete-1').click();\n  await page.getByTestId('todo-delete-2').click();\n  await page.getByTestId('todo-delete-3').click();\n  await expect(page.getByTestId('todo-list')).toBeEmpty();\n  await expect(page.getByTestId('todo-count')).toHaveText('0 tasks');\n});"
+  },
+  {
+    "requirement_id": "TODO-13",
+    "category": "todo",
+    "complexity": "hard",
+    "description": "Verify that each added todo item has a unique data-testid attribute",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 2,
+    "generation_latency": 2.5,
+    "execution_duration": 0.69,
+    "retrieved_examples": [
+      "ex-11",
+      "ex-02",
+      "ex-13",
+      "ex-14",
+      "ex-17"
+    ],
+    "review": {
+      "valid": false,
+      "issues": [
+        "HALLUCINATED METHODS: page.locator().all() is used correctly but locator.all() is the recommended method",
+        "WRONG ASSERTIONS: The test does not verify that each added todo item has a unique data-testid attribute, it only checks for two specific testids",
+        "ASYNC ISSUES: await is used correctly"
+      ],
+      "suggestions": [
+        "Use locator.all() instead of page.locator().all() for better readability",
+        "Verify that the length of the Set of testIds is equal to the length of the testIds array to ensure uniqueness",
+        "Update the expectation to check for the actual number of todo items added, not just two specific testids"
+      ]
+    },
+    "revised": true,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-each-added-todo-item-has-a-unique-data.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('each added todo item has a unique data-testid attribute', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  const numItems = 5;\n  for (let i = 0; i < numItems; i++) {\n    await page.getByTestId('todo-input').fill(`Item ${i}`);\n    await page.getByTestId('add-todo-button').click();\n  }\n  const todoItems = page.locator('[data-testid^=\"todo-item-\"]');\n  const testIds = await todoItems.all().then(items => items.map(item => item.getAttribute('data-testid')));\n  expect(testIds.length).toBe(numItems);\n  expect(new Set(testIds).size).toBe(testIds.length);\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('each added todo item has a unique data-testid attribute', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('todo-input').fill('Item 1');\n  await page.getByTestId('add-todo-button').click();\n  await page.getByTestId('todo-input').fill('Item 2');\n  await page.getByTestId('add-todo-button').click();\n  const todoItems = page.locator('[data-testid^=\"todo-item-\"]');\n  const testIds = await todoItems.all().then(items => items.map(item => item.getAttribute('data-testid')));\n  expect(new Set(testIds)).toEqual(new Set(['todo-item-0', 'todo-item-1']));\n});"
+  },
+  {
+    "requirement_id": "SEARCH-01",
+    "category": "search",
+    "complexity": "easy",
+    "description": "Verify that the Search page has a title 'Search'",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 2,
+    "generation_latency": 1.03,
+    "execution_duration": 0.33,
+    "retrieved_examples": [
+      "ex-17",
+      "ex-02",
+      "ex-04",
+      "ex-15",
+      "ex-03"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-the-search-page-has-a-title--search.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('search page has correct title', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await expect(page.getByTestId('search-title')).toHaveText('Search');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('search page has correct title', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await expect(page.getByTestId('search-title')).toHaveText('Search');\n});"
+  },
+  {
+    "requirement_id": "SEARCH-02",
+    "category": "search",
+    "complexity": "easy",
+    "description": "Verify that the search input field has placeholder text 'Search...'",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 2,
+    "generation_latency": 0.87,
+    "execution_duration": 0.34,
+    "retrieved_examples": [
+      "ex-03",
+      "ex-12",
+      "ex-17",
+      "ex-04",
+      "ex-15"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-the-search-input-field-has-placeholder.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('search input has placeholder text', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await expect(page.getByTestId('search-input')).toHaveAttribute('placeholder', 'Search...');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('search input has placeholder text', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await expect(page.getByTestId('search-input')).toHaveAttribute('placeholder', 'Search...');\n});"
+  },
+  {
+    "requirement_id": "SEARCH-03",
+    "category": "search",
+    "complexity": "medium",
+    "description": "Verify that typing 'apple' in the search input shows 'Apple' in the search results dropdown",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 2,
+    "generation_latency": 1.39,
+    "execution_duration": 0.38,
+    "retrieved_examples": [
+      "ex-15",
+      "ex-04",
+      "ex-03",
+      "ex-17",
+      "ex-02"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-typing--apple--in-the-search-input-sho.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('typing query shows matching results', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await page.getByTestId('search-input').fill('apple');\n  await expect(page.getByTestId('search-results')).toContainText('Apple');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('typing query shows matching results', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await page.getByTestId('search-input').fill('apple');\n  await expect(page.getByTestId('search-results')).toContainText('Apple');\n});"
+  },
+  {
+    "requirement_id": "SEARCH-04",
+    "category": "search",
+    "complexity": "medium",
+    "description": "Verify that the search results count shows the correct number of matching results",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 1,
+    "generation_latency": 1.33,
+    "execution_duration": 0.4,
+    "retrieved_examples": [
+      "ex-17",
+      "ex-15",
+      "ex-14",
+      "ex-02",
+      "ex-16"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-the-search-results-count-shows-the-cor.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('search results count matches number of results', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await page.getByTestId('search-input').fill('test');\n  const resultsCount = await page.getByTestId('search-count').textContent();\n  const results = page.getByTestId('search-result-item');\n  expect(await results.count()).toEqual(parseInt(resultsCount.split(' ')[0]));\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('search results count matches number of results', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await page.getByTestId('search-input').fill('test');\n  const resultsCount = await page.getByTestId('search-count').textContent();\n  const results = page.getByTestId('search-result-item');\n  expect(await results.count()).toEqual(parseInt(resultsCount.split(' ')[0]));\n});"
+  },
+  {
+    "requirement_id": "SEARCH-05",
+    "category": "search",
+    "complexity": "medium",
+    "description": "Verify that typing 'an' shows multiple results including Banana and Mango",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 4,
+    "generation_latency": 1.23,
+    "execution_duration": 0.32,
+    "retrieved_examples": [
+      "ex-15",
+      "ex-17",
+      "ex-04",
+      "ex-11",
+      "ex-02"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-typing--an--shows-multiple-results-inc.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('typing query shows multiple matching results', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await page.getByTestId('search-input').fill('an');\n  await expect(page.getByTestId('search-results')).toContainText('Banana');\n  await expect(page.getByTestId('search-results')).toContainText('Mango');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('typing query shows multiple matching results', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await page.getByTestId('search-input').fill('an');\n  await expect(page.getByTestId('search-results')).toContainText('Banana');\n  await expect(page.getByTestId('search-results')).toContainText('Mango');\n});"
+  },
+  {
+    "requirement_id": "SEARCH-06",
+    "category": "search",
+    "complexity": "medium",
+    "description": "Verify that clicking a search result item fills the search input with the selected value",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": false,
+    "error_message": "Timeout after 30s",
+    "assertion_count": 2,
+    "generation_latency": 3.82,
+    "execution_duration": 30.0,
+    "retrieved_examples": [
+      "ex-16",
+      "ex-17",
+      "ex-03",
+      "ex-15",
+      "ex-04"
+    ],
+    "review": {
+      "valid": false,
+      "issues": [
+        "HALLUCINATED METHODS: locator.first() is not a standard Playwright method, use locator.first() is not needed as locator will return the first element by default, but locator.nth() can be used for specific index",
+        "ASSERTION LOGIC: The test expects the search input to have a value of 'Test', but it should expect the value to be the same as the clicked search result item"
+      ],
+      "suggestions": [
+        "Replace the line with await page.getByTestId('search-result-item').click() with await page.getByTestId('search-result-item').nth(0).click() if you want to click the first result, or use a variable to store the text of the result item and then assert that the input has that value",
+        "Add a line to store the text of the search result item before clicking it, and then assert that the input has that value, for example: const resultItemText = await page.getByTestId('search-result-item').nth(0).textContent(); await expect(page.getByTestId('search-input')).toHaveValue(resultItemText)"
+      ]
+    },
+    "revised": true,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-clicking-a-search-result-item-fills-th.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('clicking search result fills input', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await page.getByTestId('search-input').fill('test');\n  const resultItemText = await page.getByTestId('search-result-item').textContent();\n  await page.getByTestId('search-result-item').click();\n  await expect(page.getByTestId('search-input')).toHaveValue(resultItemText);\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('clicking search result fills input', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await page.getByTestId('search-input').fill('test');\n  await page.getByTestId('search-result-item').first().click();\n  await expect(page.getByTestId('search-input')).toHaveValue('Test');\n});"
+  },
+  {
+    "requirement_id": "SEARCH-07",
+    "category": "search",
+    "complexity": "medium",
+    "description": "Verify that the search results dropdown disappears after selecting a result",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 4,
+    "generation_latency": 1.26,
+    "execution_duration": 0.49,
+    "retrieved_examples": [
+      "ex-15",
+      "ex-16",
+      "ex-17",
+      "ex-18",
+      "ex-12"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-the-search-results-dropdown-disappears.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('search results dropdown disappears after selecting a result', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await page.getByTestId('search-input').fill('apple');\n  await expect(page.getByTestId('search-results')).toBeVisible();\n  await page.getByTestId('search-result-item').first().click();\n  await expect(page.getByTestId('search-results')).toBeHidden();\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('search results dropdown disappears after selecting a result', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await page.getByTestId('search-input').fill('apple');\n  await expect(page.getByTestId('search-results')).toBeVisible();\n  await page.getByTestId('search-result-item').first().click();\n  await expect(page.getByTestId('search-results')).toBeHidden();\n});"
+  },
+  {
+    "requirement_id": "SEARCH-08",
+    "category": "search",
+    "complexity": "medium",
+    "description": "Verify that clearing the search input hides the search results dropdown",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 2,
+    "generation_latency": 0.92,
+    "execution_duration": 0.21,
+    "retrieved_examples": [
+      "ex-12",
+      "ex-15",
+      "ex-17",
+      "ex-03",
+      "ex-18"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-clearing-the-search-input-hides-the-se.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('clearing search input hides results dropdown', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await page.getByTestId('search-input').fill('apple');\n  await page.getByTestId('search-input').fill('');\n  await expect(page.getByTestId('search-results')).toBeHidden();\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('clearing search input hides results dropdown', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await page.getByTestId('search-input').fill('apple');\n  await page.getByTestId('search-input').fill('');\n  await expect(page.getByTestId('search-results')).toBeHidden();\n});"
+  },
+  {
+    "requirement_id": "SEARCH-09",
+    "category": "search",
+    "complexity": "hard",
+    "description": "Verify that typing a query with no matches shows no results dropdown and displays 0 results found",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 4,
+    "generation_latency": 1.17,
+    "execution_duration": 0.28,
+    "retrieved_examples": [
+      "ex-15",
+      "ex-17",
+      "ex-07",
+      "ex-04",
+      "ex-03"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-typing-a-query-with-no-matches-shows-n.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('typing query with no matches shows no results dropdown and displays 0 results found', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await page.getByTestId('search-input').fill('nonexistentquery');\n  await expect(page.getByTestId('search-results')).not.toBeVisible();\n  await expect(page.getByTestId('search-count')).toContainText('0 results found');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('typing query with no matches shows no results dropdown and displays 0 results found', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await page.getByTestId('search-input').fill('nonexistentquery');\n  await expect(page.getByTestId('search-results')).not.toBeVisible();\n  await expect(page.getByTestId('search-count')).toContainText('0 results found');\n});"
+  },
+  {
+    "requirement_id": "SEARCH-10",
+    "category": "search",
+    "complexity": "easy",
+    "description": "Verify that the search results are hidden by default when the page loads",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 2,
+    "generation_latency": 1.15,
+    "execution_duration": 0.2,
+    "retrieved_examples": [
+      "ex-01",
+      "ex-17",
+      "ex-18",
+      "ex-15",
+      "ex-08"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-the-search-results-are-hidden-by-defau.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('search results are hidden by default', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await expect(page.getByTestId('search-results')).toBeHidden();\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('search results are hidden by default', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await expect(page.getByTestId('search-results')).toBeHidden();\n});"
+  },
+  {
+    "requirement_id": "SEARCH-11",
+    "category": "search",
+    "complexity": "hard",
+    "description": "Verify that searching for 'e' returns multiple results and the count matches the number of displayed items",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 3,
+    "generation_latency": 0.98,
+    "execution_duration": 0.22,
+    "retrieved_examples": [
+      "ex-17",
+      "ex-14",
+      "ex-15",
+      "ex-02",
+      "ex-11"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-searching-for--e--returns-multiple-res.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('searching for \"e\" returns multiple results and count matches', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await page.getByTestId('search-input').fill('e');\n  await expect(page.getByTestId('search-count')).toContainText('found');\n  const results = page.getByTestId('search-result-item');\n  const count = await page.getByTestId('search-count').textContent();\n  const regex = /\\d+/;\n  const countNumber = parseInt(count.match(regex)[0]);\n  expect(await results.count()).toBe(countNumber);\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('searching for \"e\" returns multiple results and count matches', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await page.getByTestId('search-input').fill('e');\n  await expect(page.getByTestId('search-count')).toContainText('found');\n  const results = page.getByTestId('search-result-item');\n  const count = await page.getByTestId('search-count').textContent();\n  const regex = /\\d+/;\n  const countNumber = parseInt(count.match(regex)[0]);\n  expect(await results.count()).toBe(countNumber);\n});"
+  },
+  {
+    "requirement_id": "CROSS-01",
+    "category": "cross-feature",
+    "complexity": "hard",
+    "description": "Verify that navigating to Todo adding a task then navigating to Search and back to Todo still shows the added task",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 4,
+    "generation_latency": 1.06,
+    "execution_duration": 0.36,
+    "retrieved_examples": [
+      "ex-11",
+      "ex-17",
+      "ex-08",
+      "ex-19",
+      "ex-15"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-navigating-to-todo-adding-a-task-then.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('added task persists after navigating away and back', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('todo-input').fill('Buy groceries');\n  await page.getByTestId('add-todo-button').click();\n  await expect(page.getByTestId('todo-list')).toContainText('Buy groceries');\n  await page.getByTestId('nav-search').click();\n  await page.getByTestId('nav-todo').click();\n  await expect(page.getByTestId('todo-list')).toContainText('Buy groceries');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('added task persists after navigating away and back', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('todo-input').fill('Buy groceries');\n  await page.getByTestId('add-todo-button').click();\n  await expect(page.getByTestId('todo-list')).toContainText('Buy groceries');\n  await page.getByTestId('nav-search').click();\n  await page.getByTestId('nav-todo').click();\n  await expect(page.getByTestId('todo-list')).toContainText('Buy groceries');\n});"
+  },
+  {
+    "requirement_id": "CROSS-02",
+    "category": "cross-feature",
+    "complexity": "hard",
+    "description": "Verify that successful login on the Login page does not affect the Todo list when navigating to Todo",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": false,
+    "error_message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('login-success')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('login-success')\u001b[22m",
+    "assertion_count": 6,
+    "generation_latency": 1.45,
+    "execution_duration": 5.29,
+    "retrieved_examples": [
+      "ex-11",
+      "ex-04",
+      "ex-09",
+      "ex-02",
+      "ex-01"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-successful-login-on-the-login-page-doe.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('successful login does not affect todo list', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await page.getByTestId('username-input').fill('username');\n  await page.getByTestId('password-input').fill('password');\n  await page.getByTestId('login-button').click();\n  await expect(page.getByTestId('login-success')).toBeVisible();\n  await page.getByTestId('nav-todo').click();\n  await expect(page.getByTestId('todo-list')).not.toContainText('username');\n  await expect(page.getByTestId('todo-list')).not.toContainText('password');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('successful login does not affect todo list', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await page.getByTestId('username-input').fill('username');\n  await page.getByTestId('password-input').fill('password');\n  await page.getByTestId('login-button').click();\n  await expect(page.getByTestId('login-success')).toBeVisible();\n  await page.getByTestId('nav-todo').click();\n  await expect(page.getByTestId('todo-list')).not.toContainText('username');\n  await expect(page.getByTestId('todo-list')).not.toContainText('password');\n});"
+  },
+  {
+    "requirement_id": "CROSS-03",
+    "category": "cross-feature",
+    "complexity": "hard",
+    "description": "Verify that all three pages Login Todo Search have their respective titles visible when navigated to",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 6,
+    "generation_latency": 1.24,
+    "execution_duration": 0.32,
+    "retrieved_examples": [
+      "ex-08",
+      "ex-10",
+      "ex-17",
+      "ex-01",
+      "ex-02"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-all-three-pages-login-todo-search-have.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('all pages have their respective titles visible', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await expect(page.getByTestId('login-title')).toBeVisible();\n  await page.getByTestId('nav-todo').click();\n  await expect(page.getByTestId('todo-title')).toBeVisible();\n  await page.getByTestId('nav-search').click();\n  await expect(page.getByTestId('search-title')).toBeVisible();\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('all pages have their respective titles visible', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  await expect(page.getByTestId('login-title')).toBeVisible();\n  await page.getByTestId('nav-todo').click();\n  await expect(page.getByTestId('todo-title')).toBeVisible();\n  await page.getByTestId('nav-search').click();\n  await expect(page.getByTestId('search-title')).toBeVisible();\n});"
+  },
+  {
+    "requirement_id": "CROSS-04",
+    "category": "cross-feature",
+    "complexity": "hard",
+    "description": "Verify complete user flow: navigate to Todo add 2 tasks navigate to Search search for an item navigate back to Todo and verify tasks persist",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 17,
+    "generation_latency": 1.44,
+    "execution_duration": 0.43,
+    "retrieved_examples": [
+      "ex-11",
+      "ex-10",
+      "ex-19",
+      "ex-08",
+      "ex-17"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-complete-user-flow--navigate-to-todo-add-2.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('complete user flow: add tasks, search, and verify task persistence', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await expect(page.getByTestId('todo-title')).toBeVisible();\n  await page.getByTestId('todo-input').fill('Buy groceries');\n  await page.getByTestId('add-todo-button').click();\n  await page.getByTestId('todo-input').fill('Walk the dog');\n  await page.getByTestId('add-todo-button').click();\n  await expect(page.getByTestId('todo-list')).toContainText('Buy groceries');\n  await expect(page.getByTestId('todo-list')).toContainText('Walk the dog');\n  await page.getByTestId('nav-search').click();\n  await expect(page.getByTestId('search-title')).toBeVisible();\n  await page.getByTestId('search-input').fill('an');\n  await expect(page.getByTestId('search-count')).toContainText('found');\n  const results = page.getByTestId('search-result-item');\n  expect(await results.count()).toBeGreaterThan(0);\n  await page.getByTestId('nav-todo').click();\n  await expect(page.getByTestId('todo-title')).toBeVisible();\n  await expect(page.getByTestId('todo-list')).toContainText('Buy groceries');\n  await expect(page.getByTestId('todo-list')).toContainText('Walk the dog');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('complete user flow: add tasks, search, and verify task persistence', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await expect(page.getByTestId('todo-title')).toBeVisible();\n  await page.getByTestId('todo-input').fill('Buy groceries');\n  await page.getByTestId('add-todo-button').click();\n  await page.getByTestId('todo-input').fill('Walk the dog');\n  await page.getByTestId('add-todo-button').click();\n  await expect(page.getByTestId('todo-list')).toContainText('Buy groceries');\n  await expect(page.getByTestId('todo-list')).toContainText('Walk the dog');\n  await page.getByTestId('nav-search').click();\n  await expect(page.getByTestId('search-title')).toBeVisible();\n  await page.getByTestId('search-input').fill('an');\n  await expect(page.getByTestId('search-count')).toContainText('found');\n  const results = page.getByTestId('search-result-item');\n  expect(await results.count()).toBeGreaterThan(0);\n  await page.getByTestId('nav-todo').click();\n  await expect(page.getByTestId('todo-title')).toBeVisible();\n  await expect(page.getByTestId('todo-list')).toContainText('Buy groceries');\n  await expect(page.getByTestId('todo-list')).toContainText('Walk the dog');\n});"
+  },
+  {
+    "requirement_id": "UI-01",
+    "category": "ui",
+    "complexity": "easy",
+    "description": "Verify that the page loads within 3 seconds",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 1,
+    "generation_latency": 0.86,
+    "execution_duration": 0.15,
+    "retrieved_examples": [
+      "ex-01",
+      "ex-02",
+      "ex-08",
+      "ex-11",
+      "ex-10"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-the-page-loads-within-3-seconds.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('page loads within 3 seconds', async ({ page }) => {\n  const startTime = Date.now();\n  await page.goto('/');\n  const endTime = Date.now();\n  const loadTime = endTime - startTime;\n  await expect(loadTime).toBeLessThan(3000);\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('page loads within 3 seconds', async ({ page }) => {\n  const startTime = Date.now();\n  await page.goto('/');\n  const endTime = Date.now();\n  const loadTime = endTime - startTime;\n  await expect(loadTime).toBeLessThan(3000);\n});"
+  },
+  {
+    "requirement_id": "UI-02",
+    "category": "ui",
+    "complexity": "medium",
+    "description": "Verify that the login button changes appearance on hover",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": false,
+    "error_message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('login-button')\nExpected pattern: \u001b[32m/hover/\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  ",
+    "assertion_count": 2,
+    "generation_latency": 1.26,
+    "execution_duration": 5.28,
+    "retrieved_examples": [
+      "ex-09",
+      "ex-04",
+      "ex-01",
+      "ex-18",
+      "ex-19"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-the-login-button-changes-appearance-on.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('login button changes appearance on hover', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  const loginButton = page.getByTestId('login-button');\n  await expect(loginButton).not.toHaveClass(/hover/);\n  await loginButton.hover();\n  await expect(loginButton).toHaveClass(/hover/);\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('login button changes appearance on hover', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-login').click();\n  const loginButton = page.getByTestId('login-button');\n  await expect(loginButton).not.toHaveClass(/hover/);\n  await loginButton.hover();\n  await expect(loginButton).toHaveClass(/hover/);\n});"
+  },
+  {
+    "requirement_id": "UI-03",
+    "category": "ui",
+    "complexity": "easy",
+    "description": "Verify that the page title in the browser tab is 'Sample App'",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "execution_passed": true,
+    "error_message": null,
+    "assertion_count": 2,
+    "generation_latency": 0.72,
+    "execution_duration": 0.14,
+    "retrieved_examples": [
+      "ex-02",
+      "ex-11",
+      "ex-07",
+      "ex-01",
+      "ex-08"
+    ],
+    "review": {
+      "valid": true,
+      "issues": [],
+      "suggestions": []
+    },
+    "revised": false,
+    "filepath": "tests/generated/multiagent/multiagent-verify-that-the-page-title-in-the-browser-tab-is.spec.js",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('page title is Sample App', async ({ page }) => {\n  await page.goto('/');\n  await expect(page).toHaveTitle('Sample App');\n});",
+    "code_v1": "import { test, expect } from '@playwright/test';\n\ntest('page title is Sample App', async ({ page }) => {\n  await page.goto('/');\n  await expect(page).toHaveTitle('Sample App');\n});"
+  }
+]

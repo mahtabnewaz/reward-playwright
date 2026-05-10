@@ -1,0 +1,122 @@
+[
+  {
+    "id": "ex-01",
+    "category": "visibility",
+    "description": "Check element visibility on page load",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('button is visible on page load', async ({ page }) => {\n  await page.goto('/');\n  await expect(page.getByTestId('login-button')).toBeVisible();\n});"
+  },
+  {
+    "id": "ex-02",
+    "category": "visibility",
+    "description": "Check element has specific text content",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('heading contains expected text', async ({ page }) => {\n  await page.goto('/');\n  await expect(page.getByTestId('login-title')).toHaveText('Login');\n});"
+  },
+  {
+    "id": "ex-03",
+    "category": "input",
+    "description": "Check input has placeholder attribute",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('input has placeholder text', async ({ page }) => {\n  await page.goto('/');\n  await expect(page.getByTestId('username-input')).toHaveAttribute('placeholder', 'Enter username');\n});"
+  },
+  {
+    "id": "ex-04",
+    "category": "input",
+    "description": "Check input is of password type",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('password input has correct type', async ({ page }) => {\n  await page.goto('/');\n  await expect(page.getByTestId('password-input')).toHaveAttribute('type', 'password');\n});"
+  },
+  {
+    "id": "ex-05",
+    "category": "form",
+    "description": "Fill form and submit with valid credentials",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('successful login shows success message', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('username-input').fill('admin');\n  await page.getByTestId('password-input').fill('password123');\n  await page.getByTestId('login-button').click();\n  await expect(page.getByTestId('login-success')).toBeVisible();\n});"
+  },
+  {
+    "id": "ex-06",
+    "category": "form",
+    "description": "Submit form with invalid credentials shows error",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('invalid login shows error message', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('username-input').fill('wrong');\n  await page.getByTestId('password-input').fill('wrong');\n  await page.getByTestId('login-button').click();\n  await expect(page.getByTestId('login-error')).toBeVisible();\n  await expect(page.getByTestId('login-error')).toHaveText('Invalid username or password');\n});"
+  },
+  {
+    "id": "ex-07",
+    "category": "form",
+    "description": "Submit empty form shows validation error",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('empty form submission shows validation error', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('login-button').click();\n  await expect(page.getByTestId('login-error')).toHaveText('Please fill in all fields');\n});"
+  },
+  {
+    "id": "ex-08",
+    "category": "navigation",
+    "description": "Navigate between pages by clicking nav link",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('clicking nav link switches to target page', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await expect(page.getByTestId('todo-title')).toBeVisible();\n});"
+  },
+  {
+    "id": "ex-09",
+    "category": "navigation",
+    "description": "Check active CSS class on selected nav link",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('clicked nav link gets active class', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await expect(page.getByTestId('nav-search')).toHaveClass(/active/);\n});"
+  },
+  {
+    "id": "ex-10",
+    "category": "navigation",
+    "description": "Multi-page navigation flow",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('navigates through multiple pages', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await expect(page.getByTestId('todo-title')).toBeVisible();\n  await page.getByTestId('nav-search').click();\n  await expect(page.getByTestId('search-title')).toBeVisible();\n  await page.getByTestId('nav-login').click();\n  await expect(page.getByTestId('login-title')).toBeVisible();\n});"
+  },
+  {
+    "id": "ex-11",
+    "category": "list",
+    "description": "Add item to list and verify it appears",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('adding item appends it to list', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('todo-input').fill('Buy groceries');\n  await page.getByTestId('add-todo-button').click();\n  await expect(page.getByTestId('todo-list')).toContainText('Buy groceries');\n});"
+  },
+  {
+    "id": "ex-12",
+    "category": "list",
+    "description": "Input field clears after submission",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('input clears after adding item', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('todo-input').fill('Task 1');\n  await page.getByTestId('add-todo-button').click();\n  await expect(page.getByTestId('todo-input')).toHaveValue('');\n});"
+  },
+  {
+    "id": "ex-13",
+    "category": "list",
+    "description": "Counter updates as items are added",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('count badge updates with items', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('todo-input').fill('Item 1');\n  await page.getByTestId('add-todo-button').click();\n  await expect(page.getByTestId('todo-count')).toHaveText('1 task');\n});"
+  },
+  {
+    "id": "ex-14",
+    "category": "list",
+    "description": "Counting items using locator.count()",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('list contains expected number of items', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('todo-input').fill('A');\n  await page.getByTestId('add-todo-button').click();\n  await page.getByTestId('todo-input').fill('B');\n  await page.getByTestId('add-todo-button').click();\n  const items = page.locator('.todo-item');\n  await expect(items).toHaveCount(2);\n});"
+  },
+  {
+    "id": "ex-15",
+    "category": "search",
+    "description": "Type query and verify dropdown shows results",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('typing query shows matching results', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await page.getByTestId('search-input').fill('apple');\n  await expect(page.getByTestId('search-results')).toContainText('Apple');\n});"
+  },
+  {
+    "id": "ex-16",
+    "category": "search",
+    "description": "Click result item to select",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('clicking result fills input', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await page.getByTestId('search-input').fill('banana');\n  await page.getByTestId('search-result-item').first().click();\n  await expect(page.getByTestId('search-input')).toHaveValue('Banana');\n});"
+  },
+  {
+    "id": "ex-17",
+    "category": "search",
+    "description": "Verify count of search results",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('result count matches displayed items', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-search').click();\n  await page.getByTestId('search-input').fill('an');\n  await expect(page.getByTestId('search-count')).toContainText('found');\n  const results = page.getByTestId('search-result-item');\n  expect(await results.count()).toBeGreaterThan(0);\n});"
+  },
+  {
+    "id": "ex-18",
+    "category": "state",
+    "description": "Element is hidden by default",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('error message hidden by default', async ({ page }) => {\n  await page.goto('/');\n  await expect(page.getByTestId('login-error')).toBeHidden();\n});"
+  },
+  {
+    "id": "ex-19",
+    "category": "state",
+    "description": "Toggle state with checkbox",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('checkbox toggles strikethrough on label', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('todo-input').fill('Walk the dog');\n  await page.getByTestId('add-todo-button').click();\n  await page.getByTestId('todo-check-1').check();\n  await expect(page.getByTestId('todo-text-1')).toHaveCSS('text-decoration', /line-through/);\n});"
+  },
+  {
+    "id": "ex-20",
+    "category": "delete",
+    "description": "Delete item from list",
+    "code": "import { test, expect } from '@playwright/test';\n\ntest('delete button removes item', async ({ page }) => {\n  await page.goto('/');\n  await page.getByTestId('nav-todo').click();\n  await page.getByTestId('todo-input').fill('Delete me');\n  await page.getByTestId('add-todo-button').click();\n  await page.getByTestId('todo-delete-1').click();\n  await expect(page.getByTestId('todo-list')).not.toContainText('Delete me');\n});"
+  }
+]
