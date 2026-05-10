@@ -56,8 +56,5 @@ python src/evaluate_full.py
 
 ## Paper
 
-Accompanies the project paper *RewardPlaywright: Agentic RAG with Reward-Guided Multi-Agent Test Generation for Automated End-to-End Testing*, MS Software Quality Assurance course project, [University Name], 2026.
+Accompanies the project paper *RewardPlaywright: Agentic RAG with Reward-Guided Multi-Agent Test Generation for Automated End-to-End Testing*, MS Software Quality Assurance course project, [North South University], 2026.
 
-## License
-
-MIT
